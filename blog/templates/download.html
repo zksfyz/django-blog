@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+
+    <title>MG Blog</title>
+    <link rel="stylesheet" href="../static/css/pure-min.css">
+    <link rel="stylesheet" href="../static/css/monokai.css">
+    <link rel="stylesheet" href="../static/css/grids-responsive-min.css">
+    <link rel="stylesheet" href="../static/css/blog.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/ico/M.png" />
+    <link rel="stylesheet" href="../static/css/monokai_sublime.min.css">
+
+    <script src="../static/js/highlight.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+         .success,
+         .error,
+         .warning,
+         .secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+         }
+         
+         .success {
+            background: rgb(28, 184, 65); /* green */
+         }
+
+         .error {
+            background: rgb(202, 60, 60); /* maroon */
+         }
+
+         .warning {
+            background: rgb(223, 117, 20); /* orange */
+         }
+
+         .secondary {
+            background: rgb(66, 184, 221); /* light blue */
+         }
+
+         .xsmall {
+            font-size: 70%;
+         }
+
+         .small {
+            font-size: 85%;
+         }
+
+         .large {
+            font-size: 110%;
+         }
+
+         .xlarge {
+            font-size: 125%;
+         }
+	 .circle--square{
+ 	    border-radius:50%;
+	 }
+      </style>	  	  
+</head>
+<body  bgcolor="#F8F9F9">
+<div>
+                    <!--<a href="/media/{#{ bbs_detail.file_url }}" >{{ bbs_detail.file_url|cut:"uploads/" }#}</a> -->
+                   <span title="上传的文件下载链接"> <img src="../static/ico/download.png" align="buttom" class="circle--square" width="30" height="30" /></span><a href="/media/uploads/Ip_list.rar" >download</a>
+                </div>
+
+</body>
+</html>

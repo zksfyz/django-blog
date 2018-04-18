@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load custom_markdown %}
+{% block content %}
+<div class="posts">
+	<div id="myAlert" class="alert alert-success">
+        <strong>提醒！</strong>分类操作：点击以下红色按钮即可分类，如需重新分类点击分类按钮并重复以上操作！
+        </div>
+    {% for post in post_list %}
+	<hr />
+	<section class="post">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{% url "detail" id=post.id %}"  target="_blank">{{ post.title }}</a></h2>
+
+                    <p class="post-meta">
+                        Time:  <a class="post-author" href="#">{{ post.date_time |date:"Y M d"}}</a> <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">{{ post.category|title }}</a>
+                    </p>
+            </header>
+
+                <div class="post-description">
+                    <p>
+                        {{ post.content|custom_markdown|truncatewords_html:20  }}
+                    </p>
+                </div>
+                <a class="pure-button pure-button-primary" target="_blank"  href="{% url "detail" id=post.id %}">阅读更多 >>> </a>
+        </section>
+    {% endfor %}
+</div><!-- /.blog-post -->
+{% endblock %}

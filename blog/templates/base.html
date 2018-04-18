@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+
+    <title>魔库网Blog</title>
+    <link rel="stylesheet" href="../static/css/pure-min.css">
+    <link rel="stylesheet" href="../static/css/monokai.css">
+    <link rel="stylesheet" href="../static/css/grids-responsive-min.css">
+    <link rel="stylesheet" href="../static/css/blog.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/ico/M.png" />
+    <link rel="stylesheet" href="../static/css/monokai_sublime.min.css">
+
+    <script src="../static/js/highlight.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+         .success,
+         .error,
+         .warning,
+         .secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+         }
+         
+         .success {
+            background: rgb(28, 184, 65); /* green */
+         }
+
+         .error {
+            background: rgb(202, 60, 60); /* maroon */
+         }
+
+         .warning {
+            background: rgb(223, 117, 20); /* orange */
+         }
+
+         .secondary {
+            background: rgb(66, 184, 221); /* light blue */
+         }
+
+         .xsmall {
+            font-size: 70%;
+         }
+
+         .small {
+            font-size: 85%;
+         }
+
+         .large {
+            font-size: 110%;
+         }
+
+         .xlarge {
+            font-size: 125%;
+         }
+	 .circle--square{
+ 	    border-radius:50%;
+	 }
+      </style>	  	  
+</head>
+<body  bgcolor="#F8F9F9">
+<div id="layout" class="pure-g">
+   <div class="sidebar pure-u-1 pure-u-md-1-5">
+        <div class="header">
+	    <img src="../static/ico/world-wide-web.png" class="circle--square" width="80" height="80" /> <p></p>
+            <h3 class="brand-tagline"><img src="../static/ico/blogger.png" align="top" class="circle--square" width="20" height="20" />   Blog-魔库技术</h3>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <span title="首页"><a class="button-success pure-button" href="http://blog.magiccloudnet.com"><img src="../static/ico/web-page-home.png" align="top" class="circle--square" width="20" height="20" />首页</a></span>
+                    </li>
+                    <li class="nav-item">
+                        <span title="分类"><a class="button-success pure-button" href="{% url "archives" %}"><img src="../static/ico/verification-of-delivery-list-clipboard-symbol.png" align="top" class="circle--square" width="20" height="20" />分类</a>
+                    </li>
+                    <li class="nav-item">
+                        <span title="GitHub"><a class="pure-button" href="https://github.com/zksfyz" target="_blank"><img src="../static/ico/github-logo.png" align="top" class="circle--square" width="20" height="20" />Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <span title="微博"><a class="button-error pure-button" href="http://weibo.com/zksfyz" target="_blank"><img src="../static/ico/weibo-social-logo.png" align="top" class="circle--square" width="20" height="20" />Weibo</a>
+                    </li>
+                    <li class="nav-item">
+                        <span title="关于Blog"><a class="button-success pure-button" href="{% url "about_me" %}"><img src="../static/ico/info-icon.png" align="top" class="circle--square" width="20" height="20" />关于</a>
+                    </li>
+		    <li>
+		    <!--<div><p></p></div>
+		     <form class="pure-form" action="/search/" method="get">
+                    <input class="pure-input-3-3" type="text" name="s" placeholder="搜索框......">
+                    </form>
+		    </li>-->
+		    <li>
+		    <div><p></p></div>
+		    <div align="right"><span title="访问量统计"> <img src="../static/ico/bar-chart.png" align="top" class="circle--square" width="18" height="18" /><a href="http://www.amazingcounters.com">       <img border="0" src="http://cc.amazingcounters.com/counter.php?i=3212436&c=9637621" alt="AmazingCounters.com"></a></span></div>
+		    </li>
+		    <div><p></p></div>
+		    <li>
+			<a  href="https://clustrmaps.com/site/17fyn" title="Visit tracker" hidden><img src="//www.clustrmaps.com/map_v2.png?d=f2WNU0WuCfiWVW2c4LXvLmF53B-dZUZ-f1AUnTdE2YE&cl=ffffff"></a>
+		    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="content pure-u-2 pure-u-md-3-5">
+        <div>
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+		     <ul>
+                        <h3>
+                        <li><span title="博客首页"><a href="http://blog.magiccloudnet.com" ><img src="../static/ico/home142.png" align="top" class="circle--square" width="18" height="18" />Home</a></span></li>
+                        <li><span title="内容分类"><a href="{% url "archives" %}" target="_blank"><img src="../static/ico/thumbnails.png" align="top" class="circle--square" width="18" height="18" />Class</a></span></li>
+                        <li><span title="个人twitter网址"><a href="http://twitter.com/zksfyz" target="_blank"><img src="../static/ico/twitter.png" align="top" class="circle--square" width="18" height="18" />Twitter</a></span></li>
+                        <li><span title="GitHub代码站点"><a href="http://github.com/zksfyz" target="_blank"><img src="../static/ico/github.png" align="top" class="circle--square" width="18" height="18" />GitHub</a></span></li>
+			<li><span title="魔库技术网站链接地址，为您提供良好的知识！" ><a href="https://www.zksfyz.com" target="_blank"><img src="../static/ico/info.png" align="top" class="circle--square" width="17" height="17" />Abort MG</a></span></li>
+			<li>
+			   <span title="输入文章标题，回车即可搜索出结果" ><form class="pure-form" action="/search/" method="get">
+                    	   <img src="../static/ico/find.png" align="top" class="circle--square" width="35" height="35" /><input class="pure-input-3-3" type="text" name="s" placeholder="搜索标题框......">
+                    	   </form>
+			   </span>
+			</li>
+			</h3>
+                    </ul>
+                </div>
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
